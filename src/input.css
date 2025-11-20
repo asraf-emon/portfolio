@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+
+/* Custom scrollbar for aesthetic purposes */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #1e293b; /* Dark track */
+}
+::-webkit-scrollbar-thumb {
+    background: #4f46e5; /* Primary color thumb */
+    border-radius: 4px;
+}
+
+/* Smooth scrolling for internal anchors */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Set base styles to be the permanent dark mode */
+body {
+    background-color: #0f172a; /* dark-bg default */
+    color: #e2e8f0; /* dark-text default */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Simple typing effect animation */
+@keyframes typing {
+    from {
+        width: 0;
+}
+    to {
+        width: 100%;
+}
+}
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #4f46e5;
+    }
+}
+
+.typewriter h1 {
+    overflow: hidden;
+    border-right: 0.15em solid #4f46e5;
+    white-space: nowrap;
+    animation: typing 3s steps(45, end) forwards,
+        blink-caret 0.75s step-end infinite;
+}
