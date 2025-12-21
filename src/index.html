@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Meta tag -->
+    <meta name="title" content="Asraf Emon - Full Stack Web Developer" />
+    <meta
+      name="description"
+      content="Accomplished Cybersecurity, OSINT, and Machine Learning professional specializing in digital investigations, threat intelligence, and national security operations. Dedicated to leveraging advanced analytics and emerging technologies to safeguard critical infrastructure, neutralize cyber threats, and deliver strategic security outcomes"
+    />
+    <meta
+      name="keywords"
+      content="Full Stack Web Developer asraf emon frontend backend"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="2 days" />
+    <meta name="author" content="Asraf Uddin Ahmed Emon" />
+    <title>Asraf Emon | MERN Developer</title>
+    <!-- Fav icon -->
+    <link
+      rel="shortcut icon"
+      href="../assets/fav/emon.png"
+      type="image/x-icon"
+    />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font family -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Tailwind Configuration (Customizing theme and colors for DARK MODE ONLY) -->
+    <script>
+      tailwind.config = {
+        // Removed darkMode: 'class' as the HTML root element is set to 'dark' permanently
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              primary: "#4F46E5", // Indigo 600
+              secondary: "#10B981", // Emerald 500
+              "dark-bg": "#0F172A", // Slate 900 (Main dark background, slightly darker than original)
+              "dark-card": "#1E293B", // Slate 800 (Card backgrounds)
+              "dark-text": "#E2E8F0", // Slate 200 (Text color)
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Custom scrollbar for aesthetic purposes */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1e293b; /* Dark track */
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #4f46e5; /* Primary color thumb */
+        border-radius: 4px;
+      }
+
+      /* Smooth scrolling for internal anchors */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Set base styles to be the permanent dark mode */
+      body {
+        background-color: #0f172a; /* dark-bg default */
+        color: #e2e8f0; /* dark-text default */
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      /* Simple typing effect animation */
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: #4f46e5;
+        }
+      }
+
+      .typewriter h1 {
+        overflow: hidden;
+        border-right: 0.15em solid #4f46e5;
+        white-space: nowrap;
+        animation: typing 3s steps(45, end) forwards,
+          blink-caret 0.75s step-end infinite;
+      }
+    </style>
+  </head>
+  <body
+    class="font-sans bg-dark-bg text-dark-text transition-colors duration-300"
+  >
+    <!-- Header / Navigation -->
+    <header
+      class="sticky top-0 z-50 bg-dark-bg/90 backdrop-blur-md shadow-lg border-b border-dark-card"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo/Name: Changed text-primary to text-cyan-400 (Teal-like color) -->
+          <a
+            href="#home"
+            class="text-2xl font-bold text-cyan-400 hover:text-secondary transition-colors"
+          >
+            Asraf Emon
+          </a>
+
+          <!-- Desktop Navigation Links: About, Resume, Skills, Certifications, Projects, Contact -->
+          <nav class="hidden md:flex space-x-6 lg:space-x-8 items-center">
+            <a
+              href="#home"
+              class="hover:text-primary transition-colors font-medium"
+              >About</a
+            >
+            <a
+              href="#skills"
+              class="hover:text-primary transition-colors font-medium"
+              >Skills</a
+            >
+            <a
+              href="#resume"
+              class="hover:text-primary transition-colors font-medium"
+              >Resume</a
+            >
+            <a
+              href="#projects"
+              class="hover:text-primary transition-colors font-medium"
+              >Projects</a
+            >
+            <a
+              href="#certs"
+              class="hover:text-primary transition-colors font-medium"
+              >Certifications</a
+            >
+            <a
+              href="#contact"
+              class="text-primary border-2 border-primary hover:bg-primary hover:text-dark-bg px-4 py-1 rounded-full transition-all duration-300 font-semibold"
+              >Contact Me</a
+            >
+          </nav>
+
+          <!-- Mobile Menu Open Button (Hidden on desktop) -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden p-2 rounded-md text-dark-text hover:bg-dark-card focus:outline-none"
+            aria-label="Open Menu"
+          >
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu (Initially Hidden) -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden absolute w-full bg-dark-card border-t border-gray-700 shadow-lg pb-2"
+      >
+        <a
+          href="#home"
+          class="mobile-link block px-4 py-2 text-sm hover:bg-gray-700"
+          >About</a
+        >
+        <a
+          href="#skills"
+          class="mobile-link block px-4 py-2 text-sm hover:bg-gray-700"
+          >Skills</a
+        >
+        <a
+          href="#resume"
+          class="mobile-link block px-4 py-2 text-sm hover:bg-gray-700"
+          >Resume</a
+        >
+        <a
+          href="#projects"
+          class="mobile-link block px-4 py-2 text-sm hover:bg-gray-700"
+          >Projects</a
+        >
+        <a
+          href="#certs"
+          class="mobile-link block px-4 py-2 text-sm hover:bg-gray-700"
+          >Certifications</a
+        >
+        <a
+          href="#contact"
+          class="mobile-link block px-4 py-2 text-sm text-primary font-semibold hover:bg-gray-700"
+          >Contact Me</a
+        >
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto">
+      <!-- 1. About Section (Home) -->
+      <section
+        id="home"
+        class="pt-20 pb-28 px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between min-h-screen"
+      >
+        <!-- Hero Image/Illustration (Left on desktop) -->
+        <div class="md:w-2/5 lg:w-1/3 mb-10 md:mb-0 p-4 rounded-xl text-center">
+          <img
+            src="../assets/images/emon.png"
+            alt="Asraf Uddin Ahmed Emon Professional Photo"
+            class="rounded-full w-48 h-48 mx-auto object-cover border-4 border-primary/50 shadow-2xl transition-transform duration-500 hover:scale-105"
+          />
+          <div class="mt-6">
+            <h2 class="text-3xl font-extrabold text-white">
+              Asraf Uddin Ahmed Emon
+            </h2>
+            <p class="text-lg text-secondary mt-1">
+              MERN Full-Stack Developer & Cybersecurity
+            </p>
+
+            <div class="mt-4 space-y-1 text-sm text-gray-400">
+              <p class="flex items-center justify-center space-x-2">
+                <i data-lucide="map-pin" class="w-4 h-4 text-primary"></i
+                ><span>Dhaka, Bangladesh</span>
+              </p>
+              <p class="flex items-center justify-center space-x-2">
+                <i data-lucide="mail" class="w-4 h-4 text-primary"></i
+                ><span>asrafemonbd97@gmail.com</span>
+              </p>
+              <p class="flex items-center justify-center space-x-2">
+                <i data-lucide="phone" class="w-4 h-4 text-primary"></i
+                ><span>+8801644271458</span>
+              </p>
+              <a
+                href="https://github.com/asraf-emon"
+                target="_blank"
+                class="flex items-center justify-center space-x-2 hover:text-primary transition-colors"
+                ><i data-lucide="github" class="w-4 h-4"></i
+                ><span>GitHub Profile</span></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Content (Right on desktop) -->
+        <div class="md:w-3/5 lg:w-1/2 md:pl-10 text-center md:text-left">
+          <p class="text-xl font-medium text-secondary mb-3">
+            Hello! I'm Asraf Uddin Ahmed Emon
+          </p>
+
+          <div class="typewriter h-24 sm:h-auto">
+            <h1
+              class="text-4xl sm:text-5xl lg:text-4xl font-extrabold leading-tight text-white inline-block"
+            >
+              MERN Full-Stack Professional...
+            </h1>
+          </div>
+
+          <h3 class="mt-8 text-2xl font-semibold text-primary mb-4">
+            Professional Summary
+          </h3>
+          <p class="mt-2 text-lg text-gray-400">
+            MERN Full-Stack Professional and Cybersecurity Analyst specializing
+            in secure application engineering and threat intelligence.
+            Experienced in leveraging OSINT and Machine Learning for digital
+            investigations to neutralize cyber threats and safeguard critical
+            infrastructure. Proven ability to architect and deliver scalable,
+            high-impact security and software solutions.
+          </p>
+
+          <div
+            class="mt-10 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4"
+          >
+            <a
+              href="#certs"
+              class="w-full sm:w-auto px-8 py-3 bg-primary text-white font-semibold rounded-lg shadow-lg shadow-primary/30 hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105"
+            >
+              View Certifications
+            </a>
+            <a
+              href="#contact"
+              class="w-full sm:w-auto px-8 py-3 border border-gray-600 text-dark-text font-semibold rounded-lg hover:bg-dark-card transition-colors duration-300"
+            >
+              Hire Me
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Skills Section -->
+      <section
+        id="skills"
+        class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-card transition-colors duration-300 border-t border-b border-gray-700"
+      >
+        <h2 class="text-4xl font-bold text-center mb-4 text-white">
+          Technical Skills
+        </h2>
+        <p class="text-center text-lg text-gray-400 mb-12">
+          Expertise across development, security, and data science domains.
+        </p>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <!-- Programming -->
+          <div
+            class="p-6 bg-dark-bg rounded-xl shadow-xl hover:shadow-primary/50 transform hover:-translate-y-1 transition duration-300 text-center border-t-4 border-primary"
+          >
+            <i data-lucide="code" class="w-8 h-8 mx-auto text-primary mb-3"></i>
+            <h3 class="text-xl font-semibold text-dark-text">Programming</h3>
+            <p class="text-gray-400 text-sm mt-2">
+              Python, JavaScript, PHP, C, C++
+            </p>
+          </div>
+
+          <!-- Web Development -->
+          <div
+            class="p-6 bg-dark-bg rounded-xl shadow-xl hover:shadow-secondary/50 transform hover:-translate-y-1 transition duration-300 text-center border-t-4 border-secondary"
+          >
+            <i
+              data-lucide="layout-grid"
+              class="w-8 h-8 mx-auto text-secondary mb-3"
+            ></i>
+            <h3 class="text-xl font-semibold text-dark-text">
+              Web Development
+            </h3>
+            <p class="text-gray-400 text-sm mt-2">MERN Full-Stack, HTML, CSS</p>
+          </div>
+
+          <!-- Database -->
+          <div
+            class="p-6 bg-dark-bg rounded-xl shadow-xl hover:shadow-yellow-500/50 transform hover:-translate-y-1 transition duration-300 text-center border-t-4 border-yellow-500"
+          >
+            <i
+              data-lucide="database"
+              class="w-8 h-8 mx-auto text-yellow-500 mb-3"
+            ></i>
+            <h3 class="text-xl font-semibold text-dark-text">Database</h3>
+            <p class="text-gray-400 text-sm mt-2">MySql, PostgreSQL, MongoDB</p>
+          </div>
+
+          <!-- AI/ML -->
+          <div
+            class="p-6 bg-dark-bg rounded-xl shadow-xl hover:shadow-pink-500/50 transform hover:-translate-y-1 transition duration-300 text-center border-t-4 border-pink-500"
+          >
+            <i
+              data-lucide="brain"
+              class="w-8 h-8 mx-auto text-pink-500 mb-3"
+            ></i>
+            <h3 class="text-xl font-semibold text-dark-text">
+              Artificial Intelligence
+            </h3>
+            <p class="text-gray-400 text-sm mt-2">ML, Deep Learning, NLP</p>
+          </div>
+
+          <!-- Cybersecurity -->
+          <div
+            class="p-6 bg-dark-bg rounded-xl shadow-xl hover:shadow-red-500/50 transform hover:-translate-y-1 transition duration-300 text-center border-t-4 border-red-500"
+          >
+            <i
+              data-lucide="shield"
+              class="w-8 h-8 mx-auto text-red-500 mb-3"
+            ></i>
+            <h3 class="text-xl font-semibold text-dark-text">Cyber Security</h3>
+            <p class="text-gray-400 text-sm mt-2">
+              EH Essentials, OSINT, Threat Intel
+            </p>
+          </div>
+
+          <!-- Networking -->
+          <div
+            class="p-6 bg-dark-bg rounded-xl shadow-xl hover:shadow-cyan-500/50 transform hover:-translate-y-1 transition duration-300 text-center border-t-4 border-cyan-500"
+          >
+            <i
+              data-lucide="git-branch"
+              class="w-8 h-8 mx-auto text-cyan-500 mb-3"
+            ></i>
+            <h3 class="text-xl font-semibold text-dark-text">Networking</h3>
+            <p class="text-gray-400 text-sm mt-2">CCNA Principles</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Resume Section (Work Experience & Educational Qualifications) -->
+      <section id="resume" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-bg">
+        <h2 class="text-4xl font-bold text-center mb-4 text-white">
+          Resume: Experience & Education
+        </h2>
+        <p class="text-center text-lg text-gray-400 mb-12">
+          Detailing professional background and formal qualifications.
+        </p>
+
+        <!-- Work Experience Sub-Section -->
+        <h3
+          class="text-3xl font-semibold text-white mb-8 border-b border-gray-700 pb-2 max-w-4xl mx-auto"
+        >
+          Work Experience
+        </h3>
+        <div class="max-w-4xl mx-auto space-y-12">
+          <!-- Job Entry 1 (Description removed) -->
+          <div class="relative pl-10 border-l-4 border-primary">
+            <div
+              class="absolute w-4 h-4 bg-primary rounded-full -left-2 top-0 shadow-lg shadow-primary/50"
+            ></div>
+            <div
+              class="p-6 bg-dark-card rounded-xl shadow-2xl hover:shadow-primary/30 transition duration-300"
+            >
+              <span class="text-sm font-medium text-secondary"
+                >01 March, 2021 - 14 August, 2025</span
+              >
+              <h3 class="text-2xl font-bold text-white mt-1">
+                Information Technology Officer
+              </h3>
+              <p class="text-lg font-medium text-gray-300">
+                National Telecommunication Monitoring Centre - NTMC (Public
+                Security Division, Ministry of Home Affairs)
+              </p>
+              <p class="text-sm text-gray-500">
+                Bir Uttam Major General Azizur Rahman Road, Tejgaon, Dhaka-1215
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Educational Qualifications Sub-Section -->
+        <h3
+          class="text-3xl font-semibold text-white mt-16 mb-8 border-b border-gray-700 pb-2 max-w-4xl mx-auto"
+        >
+          Educational Qualifications
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <!-- Education Card 1 (B.Sc - GPA removed) -->
+          <div
+            class="p-6 bg-dark-card rounded-xl shadow-xl border-b-4 border-primary hover:shadow-primary/50 transition duration-300"
+          >
+            <span class="text-sm font-medium text-secondary"
+              >Jan 2016 - Aug 2020</span
+            >
+            <h3 class="text-xl font-bold text-white mt-2">
+              Bachelor of Science, Computer Science & Engineering
+            </h3>
+            <p class="text-lg font-medium text-gray-300">
+              University of Science and Technology Chittagong
+            </p>
+          </div>
+
+          <!-- Education Card 2 (HSC - GPA removed) -->
+          <div
+            class="p-6 bg-dark-card rounded-xl shadow-xl border-b-4 border-secondary hover:shadow-secondary/50 transition duration-300"
+          >
+            <span class="text-sm font-medium text-secondary"
+              >June 2013 - Aug 2015</span
+            >
+            <h3 class="text-xl font-bold text-white mt-2">
+              Higher Secondary School Certificate (Science)
+            </h3>
+            <p class="text-lg font-medium text-gray-300">
+              Uttara High School and College
+            </p>
+          </div>
+
+          <!-- Education Card 3 (SSC - GPA removed) -->
+          <div
+            class="p-6 bg-dark-card rounded-xl shadow-xl border-b-4 border-indigo-500 hover:shadow-indigo-500/50 transition duration-300"
+          >
+            <span class="text-sm font-medium text-secondary"
+              >Jan 2003 - May 2013</span
+            >
+            <h3 class="text-xl font-bold text-white mt-2">
+              Secondary School Certificate (Science)
+            </h3>
+            <p class="text-lg font-medium text-gray-300">
+              Uttara High School and College
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Projects Section (Updated for multiple projects) -->
+      <section
+        id="projects"
+        class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-card transition-colors duration-300 border-t border-b border-gray-700"
+      >
+        <h2 class="text-4xl font-bold text-center mb-4 text-white">Projects</h2>
+        <p class="text-center text-lg text-gray-400 mb-12">
+          Showcasing key development and security projects.
+        </p>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+        >
+          <!-- Mock Project Card 1: Cybersecurity -->
+          <div
+            class="bg-dark-bg rounded-xl p-6 shadow-xl border-t-4 border-red-500 hover:shadow-red-500/30 transition duration-300"
+          >
+            <h4 class="text-2xl font-bold text-white mb-2">
+              Threat Intelligence Platform
+            </h4>
+            <p class="text-gray-400 text-sm mb-4">
+              A Python-based system utilizing OSINT and ML for real-time cyber
+              threat detection, scoring, and automated reporting to security
+              analysts. (Replace with your content)
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="text-xs font-semibold px-2 py-1 bg-red-500/20 text-red-400 rounded-full"
+                >Cybersecurity</span
+              >
+              <span
+                class="text-xs font-semibold px-2 py-1 bg-primary/20 text-primary rounded-full"
+                >Python</span
+              >
+              <span
+                class="text-xs font-semibold px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded-full"
+                >Machine Learning</span
+              >
+            </div>
+            <a
+              href="#"
+              class="text-secondary font-medium hover:text-primary transition-colors flex items-center group"
+            >
+              View Details
+              <i
+                data-lucide="arrow-right"
+                class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
+              ></i>
+            </a>
+          </div>
+
+          <!-- Mock Project Card 2: MERN Stack -->
+          <div
+            class="bg-dark-bg rounded-xl p-6 shadow-xl border-t-4 border-secondary hover:shadow-secondary/30 transition duration-300"
+          >
+            <h4 class="text-2xl font-bold text-white mb-2">
+              E-commerce Headless API
+            </h4>
+            <p class="text-gray-400 text-sm mb-4">
+              Built a scalable MERN-stack API backend for a high-traffic
+              e-commerce platform, focusing on robust security and efficient
+              MongoDB indexing. (Replace with your content)
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="text-xs font-semibold px-2 py-1 bg-secondary/20 text-secondary rounded-full"
+                >Web Development</span
+              >
+              <span
+                class="text-xs font-semibold px-2 py-1 bg-primary/20 text-primary rounded-full"
+                >MERN Stack</span
+              >
+              <span
+                class="text-xs font-semibold px-2 py-1 bg-cyan-500/20 text-cyan-400 rounded-full"
+                >Node.js</span
+              >
+            </div>
+            <a
+              href="#"
+              class="text-secondary font-medium hover:text-primary transition-colors flex items-center group"
+            >
+              View Details
+              <i
+                data-lucide="arrow-right"
+                class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
+              ></i>
+            </a>
+          </div>
+
+          <!-- Mock Project Card 3: Data Science/NLP -->
+          <div
+            class="bg-dark-bg rounded-xl p-6 shadow-xl border-t-4 border-primary hover:shadow-primary/30 transition duration-300"
+          >
+            <h4 class="text-2xl font-bold text-white mb-2">
+              Social Media Sentiment Analyzer
+            </h4>
+            <p class="text-gray-400 text-sm mb-4">
+              A project utilizing NLP and deep learning models to analyze public
+              sentiment from real-time social media streams for brand monitoring
+              and risk assessment. (Replace with your content)
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="text-xs font-semibold px-2 py-1 bg-pink-500/20 text-pink-400 rounded-full"
+                >Data Science</span
+              >
+              <span
+                class="text-xs font-semibold px-2 py-1 bg-primary/20 text-primary rounded-full"
+                >NLP</span
+              >
+              <span
+                class="text-xs font-semibold px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded-full"
+                >Deep Learning</span
+              >
+            </div>
+            <a
+              href="#"
+              class="text-secondary font-medium hover:text-primary transition-colors flex items-center group"
+            >
+              View Details
+              <i
+                data-lucide="arrow-right"
+                class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
+              ></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Certifications Section -->
+      <section id="certs" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-bg">
+        <h2 class="text-4xl font-bold text-center mb-4 text-white">
+          Certifications & Training
+        </h2>
+        <p class="text-center text-lg text-gray-400 mb-12">
+          Key professional certifications validating expertise.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <!-- Certification Card 1: Chittagong Student & Police Engagement -->
+          <div
+            class="bg-dark-card rounded-xl shadow-2xl border-l-4 border-secondary group hover:shadow-secondary/30 transition duration-300"
+          >
+            <div class="p-6">
+              <i data-lucide="users" class="w-8 h-8 text-secondary mb-3"></i>
+              <h4 class="text-xl font-semibold text-dark-text mb-1">
+                Chittagong Student & Police Engagement (BCCP)
+              </h4>
+              <p class="text-gray-500 text-sm mb-4">
+                Training by Bangladesh Center for Communication Programs to
+                increase policing, education, and health awareness in the local
+                community.
+              </p>
+              <span
+                class="inline-block text-xs font-semibold px-3 py-1 bg-secondary/20 text-secondary rounded-full"
+                >March 2018</span
+              >
+            </div>
+          </div>
+          <!-- Certification Card 2: Ethical Hacking Essentials -->
+          <div
+            class="bg-dark-card rounded-xl shadow-2xl border-l-4 border-red-500 group hover:shadow-red-500/30 transition duration-300"
+          >
+            <div class="p-6">
+              <i data-lucide="lock" class="w-8 h-8 text-red-500 mb-3"></i>
+              <h4 class="text-xl font-semibold text-dark-text mb-1">
+                Ethical Hacking Essentials (EC-Council)
+              </h4>
+              <p class="text-gray-500 text-sm mb-4">
+                Completed foundational training in ethical hacking covering key
+                concepts such as footprinting, scanning, enumeration, system
+                hacking, and vulnerability assessment. Gained hands-on
+                experience with tools used in penetration testing.
+              </p>
+              <span
+                class="inline-block text-xs font-semibold px-3 py-1 bg-red-500/20 text-red-400 rounded-full"
+                >May 2022</span
+              >
+            </div>
+          </div>
+
+          <!-- Certification Card 3: Cryptocurrency Investigations -->
+          <div
+            class="bg-dark-card rounded-xl shadow-2xl border-l-4 border-yellow-500 group hover:shadow-yellow-500/30 transition duration-300"
+          >
+            <div class="p-6">
+              <i
+                data-lucide="dollar-sign"
+                class="w-8 h-8 text-yellow-500 mb-3"
+              ></i>
+              <h4 class="text-xl font-semibold text-dark-text mb-1">
+                Cryptocurrency Investigations (British High Commission, Dhaka)
+              </h4>
+              <p class="text-gray-500 text-sm mb-4">
+                Specialized training focused on countering terrorism and
+                preventing money laundering through the monitoring and analysis
+                of crypto transactions.
+              </p>
+              <span
+                class="inline-block text-xs font-semibold px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-full"
+                >June 2024</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Contact Section -->
+      <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-card">
+        <h2 class="text-4xl font-bold text-center mb-4 text-white">
+          Get in Touch
+        </h2>
+        <p class="text-center text-lg text-gray-400 mb-12">
+          Ready to discuss your next project or security challenge.
+        </p>
+
+        <div
+          class="max-w-3xl mx-auto bg-dark-bg p-8 md:p-12 rounded-xl shadow-3xl border border-primary/20"
+        >
+          <form action="#" method="POST" class="space-y-6">
+            <div>
+              <label
+                for="name"
+                class="block text-sm font-medium text-gray-300 mb-2"
+                >Your Name</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-primary focus:border-primary bg-gray-700 text-white transition duration-200"
+                placeholder="Enter your full name"
+              />
+            </div>
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-medium text-gray-300 mb-2"
+                >Your Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-primary focus:border-primary bg-gray-700 text-white transition duration-200"
+                placeholder="example@email.com"
+              />
+            </div>
+            <div>
+              <label
+                for="message"
+                class="block text-sm font-medium text-gray-300 mb-2"
+                >Your Message</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                class="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-primary focus:border-primary bg-gray-700 text-white transition duration-200"
+                placeholder="Describe your project or inquiry..."
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="w-full px-6 py-3 bg-secondary text-white font-semibold rounded-lg shadow-md hover:bg-emerald-600 transition-all duration-300 transform hover:scale-[1.01]"
+            >
+              Send Message
+            </button>
+            <!-- <p class="text-center text-xs text-gray-500 mt-4">
+              (Note: This is a static demo form. Server-side logic is required
+              for email delivery.)
+            </p> -->
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- 7. Footer -->
+    <footer class="bg-gray-900 border-t border-gray-700 mt-12">
+      <div class="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8 text-center">
+        <a
+          href="#home"
+          class="text-2xl font-bold text-secondary hover:text-primary transition-colors"
+          >Asraf Emon</a
+        >
+        <p class="mt-4 text-gray-400">
+          &copy; <span id="current-year"></span> Asraf Uddin Ahmed Emon. All
+          rights reserved. |
+          <span class="font-medium text-primary"
+            >Focused on Secure Solutions.</span
+          >
+        </p>
+        <div class="mt-6 flex justify-center space-x-6">
+          <a
+            href="https://github.com/asraf-emon"
+            target="_blank"
+            class="text-gray-400 hover:text-primary transition-colors"
+            aria-label="GitHub"
+          >
+            <i data-lucide="github" class="w-6 h-6"></i>
+          </a>
+          <a
+            href="#"
+            class="text-gray-400 hover:text-primary transition-colors"
+            aria-label="LinkedIn"
+          >
+            <i data-lucide="linkedin" class="w-6 h-6"></i>
+          </a>
+          <a
+            href="mailto:asrafemonbd97@gmail.com"
+            class="text-gray-400 hover:text-primary transition-colors"
+            aria-label="Email"
+          >
+            <i data-lucide="mail" class="w-6 h-6"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <!-- JavaScript Link -->
+    <script src="./main.js"></script>
+  </body>
+</html>
